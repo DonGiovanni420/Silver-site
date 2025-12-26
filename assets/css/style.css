@@ -100,7 +100,7 @@ header {
   border: 1px solid transparent;
 }
 
-navlinks a:hover {
+.navlinks a:hover {
   color: var(--text);
   text-decoration: none;
   border-color: var(--border);
@@ -276,4 +276,161 @@ footer {
   padding: 22px 0 40px;
   color: var(--muted);
   font-size: 14px;
+}
+
+/* == ARTICLE LAYOUT + TYPO == */
+
+.article {
+  width: min(78ch, calc(100% - 2*var(--pad)));
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 44px) 0;
+  scroll-margin-top: 90px; /* HELPS WHEN JUMPING TO HEADINGS WITH STICKY NAV */
+}
+
+.article header {
+  position: static;   /* PREVENTS STICKY HEADER STYLING FROM THE AFFECTED ARTICLE HEADER BLOCKS */
+  backdrop-filter: none;
+  background: none;
+  border: none;
+}
+
+.article .meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.article h1 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 4.2vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.article h2 {
+  margin: 1.6em 0 0.55em;
+  padding-top: 0.9em;
+  border-top: 1px solid var(--border);
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.article h3 {
+  margin: 1.2em 0 0.45em;
+  line-height: 1.25;
+}
+
+.article p {
+  margin: 0.95em 0;
+  color: var(--text);
+}
+
+.article .lede {
+  max-width: none;  /* ALLOW FULL READABLE WIDTH INSIDE ARTICLE CONTAINER */
+}
+
+/* LINKS INSIDE ARTICLES: KEEP YOUR GLOBAL STYLE, BUT MAKE THEM POP */
+.article a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.article a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* LISTS */
+.article ul,
+.article ol {
+  margin: 0.9em 0 1.1em 1.2em;
+}
+
+.article li {
+  margin: 0.35em 0;
+  color: var(--text);
+}
+
+/* CALLOUT BOX (FOR "QUICK ANSWER" / "KEY TAKEAWAY") */
+.callout {
+  margin: 1.2em 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(139, 211, 255, 0.22);
+  background: linear-gradient(180deg, rgba(139, 211, 255, 0.10), rgba(255, 255, 255, 0.03));
+  box-shadow: var(--shadow);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--silver);
+}
+
+/* BLOCKQUOTES */
+
+.article blockquote {
+  margin: 1.2em 0;
+  padding: 0.2em 1em;
+  border-left: 3px solid rgba(139, 211, 255, 0.35);
+  color: var(--muted);
+}
+
+/* DIVIDER */
+
+.article hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.6em 0;
+}
+
+/* OPTIONAL "CARD SECTION" INSIDE ARTICLES (GREAT FOR AFFILIATE SECTIONS LATER) */
+
+.article .infocard {
+  margin: 1.2em 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* TABLES (FOR COMPARISON LATER) */
+.article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 0.98em;
+}
+
+.article th,
+.article td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article th {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* CODE BLOCKS (IF YOU ADD TOOLS/SCRIPTS LATER) */
+.article pre,
+.article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.article code {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.12em 0.38em;
+}
+
+.article pre {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  overflow-x: auto;
 }
