@@ -25,7 +25,7 @@
 
 * { box-sizing: border-box; }
 
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 
 body {
   margin: 0;
@@ -37,6 +37,8 @@ body {
     radial-gradient(900px 700px at 50% 120%, rgba(207, 215, 230, 0.07), transparent 60%),
     var(--bg);
   line-height: 1.55;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -285,6 +287,9 @@ footer {
   margin: 0 auto;
   padding: clamp(22px, 4vw, 44px) 0;
   scroll-margin-top: 90px; /* HELPS WHEN JUMPING TO HEADINGS WITH STICKY NAV */
+  background: rgba(15, 22, 34, 0.65);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
 }
 
 .article header {
@@ -439,7 +444,7 @@ footer {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5em 0;
-  font-size0.95rem;
+  font-size: 0.95rem;
 }
 
 .compare-table th,
